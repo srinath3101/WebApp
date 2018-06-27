@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       parallel {
-        stage('build') {
+        stage('compile') {
           steps {
             sh 'mvn clean deploy'
           }
