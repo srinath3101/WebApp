@@ -21,5 +21,29 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
       <scope>test</scope>  
     </dependency>  
   </dependencies>  
-  
+  <build>
+   <finalName>${project.artifactId}-${project.version}</finalName>
+	<plugins>
+   		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-release-plugin</artifactId>
+			<version>2.5.3</version>
+			<configuration>
+				<arguments>-DskipTests</arguments>
+			</configuration>
+			<dependencies>
+				<dependency>
+					<groupId>org.apache.maven.shared</groupId>
+					<artifactId>maven-invoker</artifactId>
+					<version>2.2</version>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>1.8.1</version>
+				</dependency>
+			</dependencies>
+		</plugin>
+	</plugins>
+ </build> 
 </project> 
