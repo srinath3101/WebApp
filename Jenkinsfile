@@ -1,20 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
-      parallel {
-        stage('compile') {
+    stage('example') {
           steps {
-            sh 'mvn clean deploy'
+            echo 'Hello World'
           }
-        }
-        stage('parallel') {
-          steps {
-            echo 'parallel'
-            echo 'parallel'
-          }
-        }
-      }
-    }
+        }       
+     }
   }
-}
