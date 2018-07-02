@@ -6,5 +6,9 @@ node{
     {
         sh 'mvn clean package'
     }
+    stage('Build Docker image')
+    {
+        sh 'docker build -t srinathharsha/my-app:2.0.0 .'
+    }
  }
      
